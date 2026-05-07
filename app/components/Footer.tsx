@@ -5,10 +5,10 @@ export default function Footer() {
         <div className="max-w-2xl mx-auto mb-20 max-md:mb-12">
           <h2 className="font-serif text-3xl max-md:text-2xl font-semibold mb-2.5">Thank you for support</h2>
           <p className="text-sm text-[#888] italic mb-10">
-            &quot;โปรเจกต์นี้เกิดขึ้นจากความร่วมมือของ <br/>
+            &quot;เว็บไซต์นี้จัดทำขึ้นเพื่อนโปรเจคของบ้าน <br/>
 HUANGXING THAILAND, QIUDINGJIE HOME TH, OCEANJIANG TH และ JiangLi Lele TH <br/>
 เพื่อร่วมกันส่งต่อความรัก การสนับสนุน และความทรงจำอันพิเศษให้กับ DESIRE4 ในคอนเสิร์ตครั้งแรกที่กรุงเทพฯ <br/>
-ขอบคุณแฟน ๆ ทุกคนที่ร่วมเป็นส่วนหนึ่งของค่ำคืนครั้งสำคัญนี้ไปด้วยกันค่ะ&quot;
+ขอบคุณแฟน ๆ ทุกคนที่ร่วมเป็นส่วนหนึ่งของโปรเจกต์นี้ไปด้วยกันค่ะ&quot;
           </p>
         </div>
         
