@@ -20,7 +20,19 @@ const kanit = Kanit({
 
 export const metadata: Metadata = {
   title: "DESIRE4 1st Concert",
-  description: "Bangkok - 2024. DESIRE4 1st Concert.",
+  description: "Support project for DESIRE4 1st Concert in Bangkok. Organized by HUANGXING THAILAND, QIUDINGJIE HOME TH, OCEANJIANG TH and JiangLi Lele TH.",
+  manifest: '/manifest.json',
+  themeColor: '#d4af37',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=1',
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: "D4 Concert",
+  },
 };
 
 export default function RootLayout({
