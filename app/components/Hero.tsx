@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center text-center px-5 py-10 overflow-hidden">
+    <section className="relative min-h-[50vh] md:min-h-[80vh] flex items-center justify-center text-center px-5 py-10 overflow-hidden">
       <div className="absolute inset-0 w-full h-full -z-10 bg-black">
         <video 
           autoPlay 

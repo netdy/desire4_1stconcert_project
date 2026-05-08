@@ -71,7 +71,7 @@ export default async function Projects() {
       id: 2, name: 'QiuDingJie', image: '/images/qiuqiu.png',
       raised: `$${qiuRaised.toLocaleString()}`, target: `$${qiuGoal.toLocaleString()}`, 
       progress: Math.min(100, Math.round((qiuRaised / Math.max(1, qiuGoal)) * 100)),
-      href: '/'
+      href: '/qiudingjie'
     },
     { 
       id: 3, name: 'XingQiu', image: '/images/xingqiu.png',
@@ -113,7 +113,7 @@ export default async function Projects() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 mx-auto">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-8 mx-auto">
           {members.map(member => {
             const CardWrapper = Link;
             const wrapperProps = { href: member.href };
@@ -122,33 +122,33 @@ export default async function Projects() {
               <CardWrapper 
                 key={member.id} 
                 {...(wrapperProps as any)}
-                className="bg-brand-card rounded-2xl p-6 md:p-8 transition-all duration-300 ease-in-out border border-brand-border cursor-pointer hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-accent group flex flex-col items-center text-center"
+                className="bg-brand-card rounded-xl p-2.5 md:p-8 transition-all duration-300 ease-in-out border border-brand-border cursor-pointer hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-accent group flex flex-col items-center text-center"
               >
-                <div className="relative w-20 h-20 md:w-28 md:h-28 rounded-full overflow-hidden mb-4 md:mb-6 border-2 border-accent shrink-0 shadow-lg">
+                <div className="relative w-12 h-12 md:w-28 md:h-28 rounded-full overflow-hidden mb-2 md:mb-6 border-2 border-accent shrink-0 shadow-lg">
                   <Image 
                     src={member.image} 
                     alt={member.name} 
                     fill
                     className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
-                    sizes="(max-width: 768px) 80px, 112px"
+                    sizes="(max-width: 768px) 48px, 112px"
                   />
                 </div>
                 
-                <h3 className="font-serif text-xl md:text-2xl font-semibold mb-2 truncate w-full">{member.name}</h3>
-                <div className="text-[#888] text-xs md:text-sm uppercase mb-4 md:mb-5 tracking-wider">
+                <h3 className="font-serif text-[0.9rem] md:text-2xl font-semibold mb-0.5 md:mb-2 truncate w-full tracking-tight uppercase">{member.name}</h3>
+                <div className="text-[#888] text-[9px] md:text-sm uppercase mb-1.5 md:mb-5 tracking-widest">
                   Target: {member.target}
                 </div>
                 
-                <div className="text-accent text-3xl md:text-5xl font-bold mb-6 tracking-tight drop-shadow-[0_0_12px_rgba(212,175,55,0.4)]">
+                <div className="text-accent text-xl md:text-5xl font-bold mb-3 md:mb-6 tracking-tight drop-shadow-[0_0_8px_rgba(212,175,55,0.4)]">
                   {member.raised}
                 </div>
                 
                 <div className="w-full mt-auto">
-                  <div className="flex justify-between items-center text-xs md:text-sm mb-2 px-1">
-                    <span className="text-[#999] uppercase tracking-widest font-medium">Progress</span>
-                    <span className="text-accent font-bold text-lg drop-shadow-md">{member.progress}%</span>
+                  <div className="flex justify-between items-center text-[9px] md:text-sm mb-1 md:mb-2 px-1">
+                    <span className="text-[#666] uppercase tracking-widest font-medium">Progress</span>
+                    <span className="text-accent font-bold text-sm md:text-lg">{member.progress}%</span>
                   </div>
-                  <div className="w-full h-[6px] bg-[#2a2a2a] rounded-full overflow-hidden shadow-inner">
+                  <div className="w-full h-1 md:h-[6px] bg-[#2a2a2a] rounded-full overflow-hidden shadow-inner">
                     <div 
                       className="h-full bg-accent rounded-full transition-all duration-1000 ease-in-out shadow-[0_0_10px_rgba(212,175,55,0.6)]" 
                       style={{ width: `${member.progress}%` }}
