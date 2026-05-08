@@ -10,170 +10,68 @@ async function getLedgerData() {
       }
     );
 
-    if (!res.ok) {
-      return {
-        donors: [],
-        totalLatest: 0,
-        totalForm: 0,
-        totalGoal: 30000,
-        goals: [
-          { id: 1, title: 'Goal 1 — Backdrop', target: 25000, raised: 0, progress: 0 },
-          { id: 2, title: 'Goal 2 — Flower', target: 5000, raised: 0, progress: 0 }
-        ]
-      };
-    }
+    if (!res.ok) return { totalForm: 0, totalGoal: 30000, goals: [] };
 
     const csv = await res.text();
+    const rows = csv.split(/\r?\n/).filter((row) => row.trim() !== '');
 
-  const rows = csv
-    .split(/\r?\n/)
-    .filter((row) => row.trim() !== '');
+    let totalGoal = 0;
+    let totalForm = 0;
+    const rawGoalTitles: string[] = [];
+    const rawGoalTargets: number[] = [];
 
-  const donors = [];
+    for (let i = 0; i < rows.length; i++) {
+      const cols = rows[i]
+        .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
+        .map((col) => col.replace(/^"|"$/g, '').trim());
 
-  let totalLatest = 0;
-  let totalForm = 0;
+      const name = cols[0];
+      const amountRaw = cols[1];
 
-  let totalGoal = 30000;
-  let totalRaisedFromSheet = 0;
-  
-  const rawGoalTitles: string[] = [];
-  const rawGoalTargets: number[] = [];
-
-  // เริ่มจาก row 1 (index 0)
-  for (let i = 0; i < rows.length; i++) {
-    // ใช้ Regex แบ่งคอลัมน์จาก CSV โดยไม่ตัดเครื่องหมายจุลภาคที่อยู่ข้างในเครื่องหมายคำพูด (เช่น "2,430.00")
-    const cols = rows[i]
-      .split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/)
-      .map((col) =>
-        col.replace(/^"|"$/g, '').trim()
-      );
-
-    const name = cols[0];
-    const amountRaw = cols[1];
-
-    // ข้อมูล Goals
-    if (name === 'xing Goal') {
-      totalGoal = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || totalGoal;
-      for (let j = 3; j < cols.length; j++) {
-        if (cols[j] && cols[j] !== '') {
-          rawGoalTitles[j] = cols[j];
+      if (name === 'xing Goal') {
+        totalGoal = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || 0;
+        for (let j = 3; j < cols.length; j++) {
+          if (cols[j]) rawGoalTitles[j] = cols[j];
+        }
+      } else if (name === 'xing Raised') {
+        totalForm = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || 0;
+        for (let j = 3; j < cols.length; j++) {
+          if (cols[j]) rawGoalTargets[j] = Number(cols[j].replace(/[^0-9.-]/g, '')) || 0;
         }
       }
-      continue;
     }
 
-    if (name === 'xing Raised') {
-      totalRaisedFromSheet = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || totalRaisedFromSheet;
-      for (let j = 3; j < cols.length; j++) {
-        if (cols[j] && cols[j] !== '') {
-          rawGoalTargets[j] = Number(cols[j].replace(/[^0-9.-]/g, '')) || 0;
-        }
+    const dynamicGoals = [];
+    let remainingRaised = totalForm;
+    let idCounter = 1;
+
+    for (let j = 3; j < Math.max(rawGoalTitles.length, rawGoalTargets.length); j++) {
+      const title = rawGoalTitles[j];
+      const target = rawGoalTargets[j];
+      if (title && target !== undefined) {
+        const raised = Math.min(remainingRaised, target);
+        remainingRaised = Math.max(0, remainingRaised - target);
+        
+        dynamicGoals.push({
+          id: idCounter++,
+          title,
+          target,
+          raised,
+          progress: target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0
+        });
       }
-      continue;
     }
 
-    // ข้าม header / row ว่าง หรือ ข้อความหมายเหตุที่หลุดมา
-    if (
-      !name ||
-      name === 'NAME(AKA)' ||
-      name.includes('ยอดเงิน') ||
-      name.includes('เนื่องจาก') ||
-      name.includes('**') ||
-      name.includes('Goal') ||
-      name.includes('Raised') ||
-      name.length > 50
-    ) {
-      continue;
-    }
-
-    // ข้ามถ้าไม่มีตัวเลขยอดเงินใน Column B
-    if (!amountRaw || amountRaw.trim() === '') {
-      continue;
-    }
-
-    // parse amount
-    const amount = Number(
-      amountRaw.replace(/[^0-9.-]/g, '')
-    );
-
-    // ข้าม amount invalid หรือเป็น 0
-    if (isNaN(amount) || amount <= 0) {
-      continue;
-    }
-
-    donors.push({
-      id: i,
-      name,
-      amount,
-    });
-  }
-
-  // total จาก donor จริง หรือจากชีตถ้ามี
-  totalForm = totalRaisedFromSheet > 0 ? totalRaisedFromSheet : donors.reduce(
-    (sum, donor) => sum + donor.amount,
-    0
-  );
-
-  totalLatest = totalForm;
-
-  const dynamicGoals = [];
-  let remainingRaised = totalForm;
-  let idCounter = 1;
-
-  for (let j = 3; j < Math.max(rawGoalTitles.length, rawGoalTargets.length); j++) {
-    const title = rawGoalTitles[j];
-    const target = rawGoalTargets[j];
-    if (title && target !== undefined) {
-      const raised = Math.min(remainingRaised, target);
-      remainingRaised = Math.max(0, remainingRaised - target);
-      
-      dynamicGoals.push({
-        id: idCounter++,
-        title: title,
-        target: target,
-        raised: raised,
-        progress: target > 0 ? Math.min(100, Math.round((raised / target) * 100)) : 0
-      });
-    }
-  }
-
-  // Fallback if no goals were found
-  if (dynamicGoals.length === 0) {
-    const defaultBackdropRaised = Math.min(totalForm, 25000);
-    const defaultFlowerRaised = Math.max(0, totalForm - 25000);
-    dynamicGoals.push(
-      { id: 1, title: 'Goal 1 — Backdrop', target: 25000, raised: defaultBackdropRaised, progress: Math.min(100, Math.round((defaultBackdropRaised / 25000) * 100)) },
-      { id: 2, title: 'Goal 2 — Flower', target: 5000, raised: defaultFlowerRaised, progress: Math.min(100, Math.round((defaultFlowerRaised / 5000) * 100)) }
-    );
-  }
-
-  return {
-    donors,
-    totalLatest,
-    totalForm,
-    totalGoal,
-    goals: dynamicGoals
-  };
+    return { totalForm, totalGoal, goals: dynamicGoals };
 
   } catch (error) {
     console.error('Failed to fetch ledger data', error);
-
-    return {
-      donors: [],
-      totalLatest: 0,
-      totalForm: 0,
-      totalGoal: 30000,
-      goals: [
-        { id: 1, title: 'Goal 1 — Backdrop', target: 25000, raised: 0, progress: 0 },
-        { id: 2, title: 'Goal 2 — Flower', target: 5000, raised: 0, progress: 0 }
-      ]
-    };
+    return { totalForm: 0, totalGoal: 30000, goals: [] };
   }
 }
 
 export default async function HuangxingPage() {
-  const { donors, totalLatest, totalForm, totalGoal, goals } = await getLedgerData();
+  const { totalForm, totalGoal, goals } = await getLedgerData();
 
   const TOTAL_GOAL = totalGoal;
 
