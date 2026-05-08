@@ -17,7 +17,7 @@ export default function Hero() {
       
       <div className="relative z-10 max-w-3xl animate-[fadeIn_1.5s_ease-out]">
         <p className="text-accent text-sm tracking-[3px] uppercase mb-2.5 font-semibold drop-shadow-md">
-          BANGKOK &middot; 2025
+          BANGKOK &middot; 2026
         </p>
         <h1 className="font-serif text-4xl md:text-6xl font-semibold mb-5 [text-shadow:0_0_30px_rgba(212,175,55,0.5)]">
           DESIRE4 1st Concert

@@ -3,7 +3,7 @@ export default function Footer() {
     <footer className="bg-[#080808] pt-20 pb-10 border-t border-brand-border text-center relative max-md:pt-16 max-md:pb-8">
       <div className="w-full max-w-7xl mx-auto px-5">
         <div className="max-w-2xl mx-auto mb-20 max-md:mb-12">
-          <h2 className="font-serif text-3xl max-md:text-2xl font-semibold mb-2.5">Thank you for support</h2>
+          <h2 className="font-serif text-3xl max-md:text-2xl font-semibold mb-2.5">Thank you for being part of this journey</h2>
           <p className="text-sm text-[#888] italic mb-10">
             &quot;เว็บไซต์นี้จัดทำขึ้นเพื่อโปรเจคของ <br/>
 HUANGXING THAILAND, QIUDINGJIE HOME TH, OCEANJIANG TH และ JiangLi Lele TH <br/>
@@ -14,7 +14,7 @@ HUANGXING THAILAND, QIUDINGJIE HOME TH, OCEANJIANG TH และ JiangLi Lele TH 
         
         <div className="border-t border-[#222] pt-10 flex flex-col items-center gap-4">
           <p className="text-[0.7rem] text-[#666] leading-relaxed mt-2">
-            © 2025 DESIRE4 1st Concert in Thailand 
+            © 2026 DESIRE4 1st Concert in Thailand 
           </p>
         </div>
       </div>
