@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next'
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'DESIRE4 1st Concert Project',
-    short_name: 'D4 Concert',
+    short_name: 'D4 Project TH',
     description: 'Support project for DESIRE4 1st Concert in Bangkok',
     start_url: '/',
     display: 'standalone',

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, Kanit, Inter } from "next/font/google";
+import { Cinzel, Inter, Kanit } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   appleWebApp: {
     capable: true,
     statusBarStyle: 'default',
-    title: "D4 Concert",
+    title: "D4 Project TH",
   },
 };
 
