@@ -100,7 +100,7 @@ export default async function XingQiuPage() {
           <div className="lg:col-span-3 bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-[0_10px_40px_rgba(0,0,0,0.35)] relative overflow-hidden">
 
             {/* Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(92,156,230,0.15),transparent_40%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(152,108,255,0.15),transparent_40%)] pointer-events-none" />
 
             {/* Header */}
             <div className="relative z-10 mb-10">
@@ -175,7 +175,7 @@ export default async function XingQiuPage() {
                         className={`h-full rounded-full transition-all duration-1000 relative overflow-hidden ${
                           isCompleted 
                             ? 'bg-gradient-to-r from-[#d4af37] via-[#fff4cc] to-[#d4af37] shadow-[0_0_12px_rgba(212,175,55,0.6)]' 
-                            : 'bg-gradient-to-r from-[#1e3a8a] via-[#4a90e2] to-[#d4af37] shadow-[0_0_8px_rgba(74,144,226,0.3)]'
+                            : 'bg-gradient-to-r from-[#6d28d9] via-[#986cff] to-[#d4af37] shadow-[0_0_8px_rgba(152,108,255,0.3)]'
                         }`}
                         style={{ width: `${goal.progress}%` }}
                       >
