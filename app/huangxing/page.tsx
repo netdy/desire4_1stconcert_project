@@ -222,11 +222,11 @@ export default async function HuangxingPage() {
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">เลขบัญชี / Account Number</p>
-                    <p className="text-[#5c9ce6] text-2xl md:text-3xl font-bold tracking-wider">XXX-X-XXXXX-X</p>
+                    <p className="text-[#5c9ce6] text-2xl md:text-3xl font-bold tracking-wider">073-3-20750-7</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">NAME SURNAME</p>
+                    <p className="text-white font-medium text-lg">Sirin S.</p>
                   </div>
                 </div>
               </div>

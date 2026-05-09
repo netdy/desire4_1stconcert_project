@@ -218,15 +218,15 @@ export default async function QiuDingJiePage() {
                 <div className="bg-[#111] border border-[#2a2a2a] rounded-2xl p-6 space-y-4 shadow-inner">
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ธนาคาร / Bank</p>
-                    <p className="text-white font-medium">กสิกรไทย (Kasikorn Bank)</p>
+                    <p className="text-white font-medium">กรุงศรี (Krungsri Bank)</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">เลขบัญชี / Account Number</p>
-                    <p className="text-[#e35b00] text-2xl md:text-3xl font-bold tracking-wider">XXX-X-XXXXX-X</p>
+                    <p className="text-[#e35b00] text-2xl md:text-3xl font-bold tracking-wider">507-4-56499-2</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">NAME SURNAME</p>
+                    <p className="text-white font-medium text-lg">Suchanat Pannusa</p>
                   </div>
                 </div>
               </div>
