@@ -28,12 +28,12 @@ async function getLedgerData() {
       const name = cols[0];
       const amountRaw = cols[1];
 
-      if (name === 'qiuqiu Goal') {
+      if (name === 'xingqiu Goal') {
         totalGoal = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || 0;
         for (let j = 3; j < cols.length; j++) {
           if (cols[j]) rawGoalTitles[j] = cols[j];
         }
-      } else if (name === 'qiuqiu Raised') {
+      } else if (name === 'xingqiu Raised') {
         totalForm = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || 0;
         for (let j = 3; j < cols.length; j++) {
           if (cols[j]) rawGoalTargets[j] = Number(cols[j].replace(/[^0-9.-]/g, '')) || 0;
@@ -70,7 +70,7 @@ async function getLedgerData() {
   }
 }
 
-export default async function QiuDingJiePage() {
+export default async function XingQiuPage() {
   const { totalForm, totalGoal, goals } = await getLedgerData();
 
   const TOTAL_GOAL = totalGoal;
@@ -83,13 +83,13 @@ export default async function QiuDingJiePage() {
         </Link>
 
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-5xl font-semibold mb-4 tracking-wide drop-shadow-sm text-[#e35b00] font-serif">
-            QiuDingJie <br />
+          <h1 className="text-5xl md:text-5xl font-semibold mb-4 tracking-wide drop-shadow-sm text-[#986cff] font-serif">
+            XingQiu <br />
             Project 
           </h1>
           <p className="text-[#a0a0a0] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             จากความรักและการสนับสนุนของแฟนๆ <br />
-            สู่โปรเจกต์พิเศษเพื่อหวงซิงใน DESIRE4 1st Concert in Bangkok
+            สู่โปรเจกต์พิเศษเพื่อซิงชิวใน DESIRE4 1st Concert in Bangkok
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export default async function QiuDingJiePage() {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
 
                 <div>
-                  <h2 className="text-5xl md:text-7xl font-bold text-[#e35b00] leading-none drop-shadow-md">
+                  <h2 className="text-5xl md:text-7xl font-bold text-[#986cff] leading-none drop-shadow-md">
                      {totalForm.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
@@ -159,7 +159,7 @@ export default async function QiuDingJiePage() {
                       </div>
 
                       <div className="text-right">
-                        <p className={`font-semibold text-sm ${isCompleted ? 'text-accent drop-shadow-md' : 'text-[#e35b00]'}`}>
+                        <p className={`font-semibold text-sm ${isCompleted ? 'text-accent drop-shadow-md' : 'text-[#986cff]'}`}>
                           {goal.progress}%
                         </p>
                       </div>
@@ -218,15 +218,15 @@ export default async function QiuDingJiePage() {
                 <div className="bg-[#111] border border-[#2a2a2a] rounded-2xl p-6 space-y-4 shadow-inner">
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ธนาคาร / Bank</p>
-                    <p className="text-white font-medium">กสิกรไทย (Kasikorn Bank)</p>
+                    <p className="text-white font-medium">กรุงเทพ (Bangkok Bank)</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">เลขบัญชี / Account Number</p>
-                    <p className="text-[#e35b00] text-2xl md:text-3xl font-bold tracking-wider">XXX-X-XXXXX-X</p>
+                    <p className="text-[#986cff] text-2xl md:text-3xl font-bold tracking-wider">098-9-536438</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">NAME SURNAME</p>
+                    <p className="text-white font-medium text-lg">Kamonchanok Kosulawath</p>
                   </div>
                 </div>
               </div>

@@ -77,7 +77,7 @@ export default async function Projects() {
       id: 3, name: 'XingQiu', image: '/images/xingqiu.png',
       raised: `$${xqRaised.toLocaleString()}`, target: `$${xqGoal.toLocaleString()}`, 
       progress: Math.min(100, Math.round((xqRaised / Math.max(1, xqGoal)) * 100)),
-      href: '/'
+      href: '/xingqiu'
     },
     { 
       id: 4, name: 'JiangLi', image: '/images/jiangli.png',
