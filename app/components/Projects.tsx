@@ -63,37 +63,37 @@ export default async function Projects() {
   const members = [
     { 
       id: 1, name: 'HuangXing', image: '/images/huangxing.png',
-      raised: `$${hxRaised.toLocaleString()}`, target: `$${hxGoal.toLocaleString()}`, 
+      raised: `${hxRaised.toLocaleString()}฿`, target: `${hxGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((hxRaised / Math.max(1, hxGoal)) * 100)),
       href: '/huangxing'
     },
     { 
       id: 2, name: 'QiuDingJie', image: '/images/qiuqiu.png',
-      raised: `$${qiuRaised.toLocaleString()}`, target: `$${qiuGoal.toLocaleString()}`, 
+      raised: `${qiuRaised.toLocaleString()}฿`, target: `${qiuGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((qiuRaised / Math.max(1, qiuGoal)) * 100)),
       href: '/qiudingjie'
     },
     { 
       id: 3, name: 'XingQiu', image: '/images/xingqiu.png',
-      raised: `$${xqRaised.toLocaleString()}`, target: `$${xqGoal.toLocaleString()}`, 
+      raised: `${xqRaised.toLocaleString()}฿`, target: `${xqGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((xqRaised / Math.max(1, xqGoal)) * 100)),
       href: '/xingqiu'
     },
     { 
       id: 4, name: 'JiangLi', image: '/images/jiangli.png',
-      raised: `$${jlRaised.toLocaleString()}`, target: `$${jlGoal.toLocaleString()}`, 
+      raised: `${jlRaised.toLocaleString()}฿`, target: `${jlGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((jlRaised / Math.max(1, jlGoal)) * 100)),
       href: '/'
     },
     { 
       id: 5, name: 'JinagHeng', image: '/images/jiang.png',
-      raised: `$${jhRaised.toLocaleString()}`, target: `$${jhGoal.toLocaleString()}`, 
+      raised: `${jhRaised.toLocaleString()}฿`, target: `${jhGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((jhRaised / Math.max(1, jhGoal)) * 100)),
       href: '/'
     },
     { 
       id: 6, name: 'LiPeien', image: '/images/peien.png',
-      raised: `$${lpRaised.toLocaleString()}`, target: `$${lpGoal.toLocaleString()}`, 
+      raised: `${lpRaised.toLocaleString()}฿`, target: `${lpGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((lpRaised / Math.max(1, lpGoal)) * 100)),
       href: '/'
     },
