@@ -129,7 +129,7 @@ export default async function LiPeienPage() {
                     Total Goal
                   </p>
 
-                  <p className="text-[#00b1d2] text-3xl md:text-4xl font-bold tracking-tight">
+                  <p className="text-accent text-3xl md:text-4xl font-bold tracking-tight">
                     {totalGoal.toLocaleString()}฿
                   </p>
                 </div>
@@ -143,23 +143,23 @@ export default async function LiPeienPage() {
                 const isCompleted = goal.progress >= 100;
 
                 return (
-                  <div key={goal.id} className={`p-5 rounded-2xl transition-all duration-500 border ${isCompleted ? 'bg-[#00b1d2]/[0.03] border-[#00b1d2]/20 shadow-[inset_0_0_20px_rgba(0,177,210,0.03)]' : 'bg-transparent border-transparent p-0'}`}>
+                  <div key={goal.id} className={`p-5 rounded-2xl transition-all duration-500 border ${isCompleted ? 'bg-accent/[0.03] border-accent/20 shadow-[inset_0_0_20px_rgba(212,175,55,0.03)]' : 'bg-transparent border-transparent p-0'}`}>
 
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center flex-wrap gap-2">
-                        <h3 className={`text-base md:text-lg tracking-[2px] uppercase font-semibold transition-colors duration-500 ${isCompleted ? 'text-[#00b1d2] drop-shadow-[0_0_8px_rgba(0,177,210,0.5)]' : 'text-white'}`}>
+                        <h3 className={`text-base md:text-lg tracking-[2px] uppercase font-semibold transition-colors duration-500 ${isCompleted ? 'text-accent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]' : 'text-white'}`}>
                           {goal.title}
                         </h3>
                         
                         {isCompleted && (
-                          <span className="inline-block px-2 py-[2px] rounded bg-[#00b1d2]/20 text-[#00b1d2] border border-[#00b1d2]/50 text-[9px] uppercase font-bold tracking-widest shadow-[0_0_10px_rgba(0,177,210,0.3)] animate-[pulse_3s_ease-in-out_infinite]">
+                          <span className="inline-block px-2 py-[2px] rounded bg-accent/20 text-accent border border-accent/50 text-[9px] uppercase font-bold tracking-widest shadow-[0_0_10px_rgba(212,175,55,0.3)] animate-[pulse_3s_ease-in-out_infinite]">
                             Achieved
                           </span>
                         )}
                       </div>
 
                       <div className="text-right">
-                        <p className={`font-semibold text-sm ${isCompleted ? 'text-[#00b1d2] drop-shadow-md' : 'text-[#00b1d2]'}`}>
+                        <p className={`font-semibold text-sm ${isCompleted ? 'text-accent drop-shadow-md' : 'text-[#00b1d2]'}`}>
                           {goal.progress}%
                         </p>
                       </div>
@@ -170,7 +170,7 @@ export default async function LiPeienPage() {
                     </p>
 
                     {/* Progress Bar */}
-                    <div className={`w-full h-2.5 rounded-full overflow-hidden border transition-colors duration-500 ${isCompleted ? 'bg-[#111] border-[#00b1d2]/30 shadow-[0_0_15px_rgba(0,177,210,0.1)]' : 'bg-[#161616] border-[#222]'}`}>
+                    <div className={`w-full h-2.5 rounded-full overflow-hidden border transition-colors duration-500 ${isCompleted ? 'bg-[#111] border-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]' : 'bg-[#161616] border-[#222]'}`}>
                       <div
                         className={`h-full rounded-full transition-all duration-1000 relative overflow-hidden ${
                           isCompleted 
@@ -190,7 +190,7 @@ export default async function LiPeienPage() {
                         {goal.raised.toLocaleString()}฿
                       </span>
 
-                      <span className={isCompleted ? 'text-[#00b1d2] font-medium' : ''}>
+                      <span className={isCompleted ? 'text-accent font-medium' : ''}>
                         {goal.target.toLocaleString()}฿
                       </span>
                     </div>
@@ -204,8 +204,8 @@ export default async function LiPeienPage() {
         {/* Donation Details Section */}
         <div className="bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-lg mb-14 relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#00b1d2] mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-full bg-[#00b1d2]/10 flex items-center justify-center text-lg">💰</span>
+            <h3 className="text-xl md:text-2xl font-serif font-semibold text-accent mb-6 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-lg">💰</span>
               รายละเอียดการร่วมโดเนท
             </h3>
             
@@ -233,7 +233,7 @@ export default async function LiPeienPage() {
 
               {/* Links & CTA */}
               <div className="flex flex-col justify-center space-y-6">
-                <div className="bg-[#00b1d2]/5 border border-[#00b1d2]/20 rounded-2xl p-6">
+                <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6">
                   <p className="text-[#aaa] text-sm mb-5 leading-relaxed">
                     ติดตามประกาศและรายละเอียดเพิ่มเติมได้ที่ (X):
                   </p>
@@ -256,7 +256,7 @@ export default async function LiPeienPage() {
             </div>
           </div>
           {/* Subtle background glow */}
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#00b1d2]/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
         {/*
         <div className="mb-10">

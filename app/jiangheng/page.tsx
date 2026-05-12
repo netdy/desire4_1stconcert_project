@@ -129,7 +129,7 @@ export default async function JiangHengPage() {
                     Total Goal
                   </p>
 
-                  <p className="text-[#B1B3B3] text-3xl md:text-4xl font-bold tracking-tight">
+                  <p className="text-accent text-3xl md:text-4xl font-bold tracking-tight">
                     {totalGoal.toLocaleString()}฿
                   </p>
                 </div>
@@ -143,23 +143,23 @@ export default async function JiangHengPage() {
                 const isCompleted = goal.progress >= 100;
 
                 return (
-                  <div key={goal.id} className={`p-5 rounded-2xl transition-all duration-500 border ${isCompleted ? 'bg-[#B1B3B3]/[0.03] border-[#B1B3B3]/20 shadow-[inset_0_0_20px_rgba(177,179,179,0.03)]' : 'bg-transparent border-transparent p-0'}`}>
+                  <div key={goal.id} className={`p-5 rounded-2xl transition-all duration-500 border ${isCompleted ? 'bg-accent/[0.03] border-accent/20 shadow-[inset_0_0_20px_rgba(212,175,55,0.03)]' : 'bg-transparent border-transparent p-0'}`}>
 
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center flex-wrap gap-2">
-                        <h3 className={`text-base md:text-lg tracking-[2px] uppercase font-semibold transition-colors duration-500 ${isCompleted ? 'text-[#B1B3B3] drop-shadow-[0_0_8px_rgba(177,179,179,0.5)]' : 'text-white'}`}>
+                        <h3 className={`text-base md:text-lg tracking-[2px] uppercase font-semibold transition-colors duration-500 ${isCompleted ? 'text-accent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]' : 'text-white'}`}>
                           {goal.title}
                         </h3>
                         
                         {isCompleted && (
-                          <span className="inline-block px-2 py-[2px] rounded bg-[#B1B3B3]/20 text-[#B1B3B3] border border-[#B1B3B3]/50 text-[9px] uppercase font-bold tracking-widest shadow-[0_0_10px_rgba(177,179,179,0.3)] animate-[pulse_3s_ease-in-out_infinite]">
+                          <span className="inline-block px-2 py-[2px] rounded bg-accent/20 text-accent border border-accent/50 text-[9px] uppercase font-bold tracking-widest shadow-[0_0_10px_rgba(212,175,55,0.3)] animate-[pulse_3s_ease-in-out_infinite]">
                             Achieved
                           </span>
                         )}
                       </div>
 
                       <div className="text-right">
-                        <p className={`font-semibold text-sm ${isCompleted ? 'text-[#B1B3B3] drop-shadow-md' : 'text-[#B1B3B3]'}`}>
+                        <p className={`font-semibold text-sm ${isCompleted ? 'text-accent drop-shadow-md' : 'text-[#B1B3B3]'}`}>
                           {goal.progress}%
                         </p>
                       </div>
@@ -170,11 +170,11 @@ export default async function JiangHengPage() {
                     </p>
 
                     {/* Progress Bar */}
-                    <div className={`w-full h-2.5 rounded-full overflow-hidden border transition-colors duration-500 ${isCompleted ? 'bg-[#111] border-[#B1B3B3]/30 shadow-[0_0_15px_rgba(177,179,179,0.1)]' : 'bg-[#161616] border-[#222]'}`}>
+                    <div className={`w-full h-2.5 rounded-full overflow-hidden border transition-colors duration-500 ${isCompleted ? 'bg-[#111] border-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]' : 'bg-[#161616] border-[#222]'}`}>
                       <div
                         className={`h-full rounded-full transition-all duration-1000 relative overflow-hidden ${
                           isCompleted 
-                            ? 'bg-gradient-to-r from-[#8e9090] via-[#B1B3B3] to-[#d1d3d3] shadow-[0_0_12px_rgba(177,179,179,0.6)]' 
+                            ? 'bg-gradient-to-r from-[#d4af37] via-[#fff4cc] to-[#d4af37] shadow-[0_0_12px_rgba(212,175,55,0.6)]' 
                             : 'bg-gradient-to-r from-[#8e9090] via-[#B1B3B3] to-[#d1d3d3] shadow-[0_0_8px_rgba(177,179,179,0.3)]'
                         }`}
                         style={{ width: `${goal.progress}%` }}
@@ -190,7 +190,7 @@ export default async function JiangHengPage() {
                         {goal.raised.toLocaleString()}฿
                       </span>
 
-                      <span className={isCompleted ? 'text-[#B1B3B3] font-medium' : ''}>
+                      <span className={isCompleted ? 'text-accent font-medium' : ''}>
                         {goal.target.toLocaleString()}฿
                       </span>
                     </div>
@@ -204,8 +204,8 @@ export default async function JiangHengPage() {
         {/* Donation Details Section */}
         <div className="bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-lg mb-14 relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#B1B3B3] mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-full bg-[#B1B3B3]/10 flex items-center justify-center text-lg">💰</span>
+            <h3 className="text-xl md:text-2xl font-serif font-semibold text-accent mb-6 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-lg">💰</span>
               รายละเอียดการร่วมโดเนท
             </h3>
             
@@ -218,27 +218,27 @@ export default async function JiangHengPage() {
                 <div className="bg-[#111] border border-[#2a2a2a] rounded-2xl p-6 space-y-4 shadow-inner">
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ธนาคาร / Bank</p>
-                    <p className="text-white font-medium">xxxxxxx</p>
+                    <p className="text-white font-medium">กสิกรไทย (Kasikorn Bank)</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">เลขบัญชี / Account Number</p>
-                    <p className="text-[#B1B3B3] text-2xl md:text-3xl font-bold tracking-wider">xxxxxxx</p>
+                    <p className="text-[#B1B3B3] text-2xl md:text-3xl font-bold tracking-wider">223-1-53966-5</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">xxxxxxx</p>
+                    <p className="text-white font-medium text-lg">วิมพ์วิภา บัวทอง</p>
                   </div>
                 </div>
               </div>
 
               {/* Links & CTA */}
               <div className="flex flex-col justify-center space-y-6">
-                <div className="bg-[#B1B3B3]/5 border border-[#B1B3B3]/20 rounded-2xl p-6">
+                <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6">
                   <p className="text-[#aaa] text-sm mb-5 leading-relaxed">
                     ติดตามประกาศและรายละเอียดเพิ่มเติมได้ที่ (X):
                   </p>
                   <Link 
-                    href="https://x.com/OceanJiangTH/status/2006697060653998238?s=20" 
+                    href="https://x.com/OceanJiangTH/status/2054085544108253629?s=20" 
                     target="_blank"
                     className="flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 transition-all py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-xl"
                   >
@@ -256,7 +256,7 @@ export default async function JiangHengPage() {
             </div>
           </div>
           {/* Subtle background glow */}
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#B1B3B3]/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
        
       </div>
