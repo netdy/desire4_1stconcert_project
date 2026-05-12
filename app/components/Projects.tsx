@@ -85,12 +85,12 @@ export default async function Projects() {
     //   progress: Math.min(100, Math.round((jlRaised / Math.max(1, jlGoal)) * 100)),
     //   href: '/'
     // },
-    // { 
-    //   id: 5, name: 'JinagHeng', image: '/images/jiang.png',
-    //   raised: `${jhRaised.toLocaleString()}฿`, target: `${jhGoal.toLocaleString()}฿`, 
-    //   progress: Math.min(100, Math.round((jhRaised / Math.max(1, jhGoal)) * 100)),
-    //   href: '/'
-    // },
+    { 
+      id: 5, name: 'JinagHeng', image: '/images/jiang.png',
+      raised: `${jhRaised.toLocaleString()}฿`, target: `${jhGoal.toLocaleString()}฿`, 
+      progress: Math.min(100, Math.round((jhRaised / Math.max(1, jhGoal)) * 100)),
+      href: '/jiangheng'
+    },
     { 
       id: 6, name: 'LiPeien', image: '/images/peien.png',
       raised: `${lpRaised.toLocaleString()}฿`, target: `${lpGoal.toLocaleString()}฿`, 
