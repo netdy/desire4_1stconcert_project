@@ -86,7 +86,7 @@ export default async function Projects() {
     //   href: '/'
     // },
     { 
-      id: 5, name: 'JinagHeng', image: '/images/jiang.png',
+      id: 5, name: 'JiangHeng', image: '/images/jiang.png',
       raised: `${jhRaised.toLocaleString()}฿`, target: `${jhGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((jhRaised / Math.max(1, jhGoal)) * 100)),
       href: '/jiangheng'

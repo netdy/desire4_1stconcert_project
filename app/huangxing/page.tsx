@@ -226,7 +226,7 @@ export default async function HuangxingPage() {
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">Sirin S.</p>
+                    <p className="text-white font-medium text-lg">Sikharin R.</p>
                   </div>
                 </div>
               </div>
