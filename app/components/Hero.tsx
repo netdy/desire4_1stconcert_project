@@ -20,7 +20,7 @@ export default function Hero() {
           BANGKOK &middot; 2026
         </p>
         <h1 className="font-serif text-4xl md:text-6xl font-semibold mb-5 [text-shadow:0_0_30px_rgba(212,175,55,0.5)]">
-          DESIRE4 1st Concert
+          Eternal Beginning <br /> Desire4 Concert in Bangkok
         </h1>
         <p className="text-base md:text-sm text-gray-200 mb-10 italic font-light leading-relaxed drop-shadow-md">
           &quot;คอนเสิร์ทครั้งแรกของ DESIRE4 ในกรุงเทพฯ <br />
