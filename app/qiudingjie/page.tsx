@@ -89,7 +89,7 @@ export default async function QiuDingJiePage() {
           </h1>
           <p className="text-[#a0a0a0] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             จากความรักและการสนับสนุนของแฟนๆ <br />
-            สู่โปรเจกต์พิเศษเพื่อหวงซิงใน DESIRE4 1st Concert in Bangkok
+            สู่โปรเจกต์พิเศษเพื่อชิวชิวใน DESIRE4 1st Concert in Bangkok
           </p>
         </div>
 
@@ -238,7 +238,7 @@ export default async function QiuDingJiePage() {
                     ติดตามประกาศและรายละเอียดเพิ่มเติมได้ที่ (X):
                   </p>
                   <Link 
-                    href="https://x.com/HuangXingTH/status/2018323567864406151?s=20" 
+                    href="https://x.com/QiuQiuHomeTH/status/2054035082151862369?s=20" 
                     target="_blank"
                     className="flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 transition-all py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-xl"
                   >

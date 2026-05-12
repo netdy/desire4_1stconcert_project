@@ -28,12 +28,12 @@ async function getLedgerData() {
       const name = cols[0];
       const amountRaw = cols[1];
 
-      if (name === 'xing Goal') {
+      if (name === 'peien Goal') {
         totalGoal = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || 0;
         for (let j = 3; j < cols.length; j++) {
           if (cols[j]) rawGoalTitles[j] = cols[j];
         }
-      } else if (name === 'xing Raised') {
+      } else if (name === 'peien Raised') {
         totalForm = Number(amountRaw?.replace(/[^0-9.-]/g, '')) || 0;
         for (let j = 3; j < cols.length; j++) {
           if (cols[j]) rawGoalTargets[j] = Number(cols[j].replace(/[^0-9.-]/g, '')) || 0;
@@ -70,7 +70,7 @@ async function getLedgerData() {
   }
 }
 
-export default async function HuangxingPage() {
+export default async function LiPeienPage() {
   const { totalForm, totalGoal, goals } = await getLedgerData();
 
   const TOTAL_GOAL = totalGoal;
@@ -78,18 +78,18 @@ export default async function HuangxingPage() {
   return (
     <main className="min-h-screen bg-brand-bg pt-24 pb-20 px-5 font-sans">
       <div className="max-w-4xl mx-auto">
-        <Link href="/" className="inline-flex items-center text-accent hover:underline mb-10 text-sm">
+        <Link href="/" className="inline-flex items-center text-[#00b1d2] hover:underline mb-10 text-sm">
           &larr; Back to Home
         </Link>
 
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-5xl font-semibold mb-4 tracking-wide drop-shadow-sm text-[#5c9ce6] font-serif">
-            Huangxing <br />
+          <h1 className="text-5xl md:text-5xl font-semibold mb-4 tracking-wide drop-shadow-sm text-[#00b1d2] font-serif">
+            Lipeien <br />
             Project 
           </h1>
           <p className="text-[#a0a0a0] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             จากความรักและการสนับสนุนของแฟนๆ <br />
-            สู่โปรเจกต์พิเศษเพื่อหวงซิงใน DESIRE4 1st Concert in Bangkok
+            สู่โปรเจกต์พิเศษเพื่อเพ่ยเอินใน DESIRE4 1st Concert in Bangkok
           </p>
         </div>
 
@@ -100,7 +100,7 @@ export default async function HuangxingPage() {
           <div className="lg:col-span-3 bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-[0_10px_40px_rgba(0,0,0,0.35)] relative overflow-hidden">
 
             {/* Glow */}
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(92,156,230,0.15),transparent_40%)] pointer-events-none" />
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(0,177,210,0.15),transparent_40%)] pointer-events-none" />
 
             {/* Header */}
             <div className="relative z-10 mb-10">
@@ -112,7 +112,7 @@ export default async function HuangxingPage() {
               <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
 
                 <div>
-                  <h2 className="text-5xl md:text-7xl font-bold text-[#5c9ce6] leading-none drop-shadow-md">
+                  <h2 className="text-5xl md:text-7xl font-bold text-[#00b1d2] leading-none drop-shadow-md">
                      {totalForm.toLocaleString(undefined, {
                       minimumFractionDigits: 2,
                       maximumFractionDigits: 2,
@@ -129,7 +129,7 @@ export default async function HuangxingPage() {
                     Total Goal
                   </p>
 
-                  <p className="text-accent text-3xl md:text-4xl font-bold tracking-tight">
+                  <p className="text-[#00b1d2] text-3xl md:text-4xl font-bold tracking-tight">
                     {totalGoal.toLocaleString()}฿
                   </p>
                 </div>
@@ -143,23 +143,23 @@ export default async function HuangxingPage() {
                 const isCompleted = goal.progress >= 100;
 
                 return (
-                  <div key={goal.id} className={`p-5 rounded-2xl transition-all duration-500 border ${isCompleted ? 'bg-accent/[0.03] border-accent/20 shadow-[inset_0_0_20px_rgba(212,175,55,0.03)]' : 'bg-transparent border-transparent p-0'}`}>
+                  <div key={goal.id} className={`p-5 rounded-2xl transition-all duration-500 border ${isCompleted ? 'bg-[#00b1d2]/[0.03] border-[#00b1d2]/20 shadow-[inset_0_0_20px_rgba(0,177,210,0.03)]' : 'bg-transparent border-transparent p-0'}`}>
 
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center flex-wrap gap-2">
-                        <h3 className={`text-base md:text-lg tracking-[2px] uppercase font-semibold transition-colors duration-500 ${isCompleted ? 'text-accent drop-shadow-[0_0_8px_rgba(212,175,55,0.5)]' : 'text-white'}`}>
+                        <h3 className={`text-base md:text-lg tracking-[2px] uppercase font-semibold transition-colors duration-500 ${isCompleted ? 'text-[#00b1d2] drop-shadow-[0_0_8px_rgba(0,177,210,0.5)]' : 'text-white'}`}>
                           {goal.title}
                         </h3>
                         
                         {isCompleted && (
-                          <span className="inline-block px-2 py-[2px] rounded bg-accent/20 text-accent border border-accent/50 text-[9px] uppercase font-bold tracking-widest shadow-[0_0_10px_rgba(212,175,55,0.3)] animate-[pulse_3s_ease-in-out_infinite]">
+                          <span className="inline-block px-2 py-[2px] rounded bg-[#00b1d2]/20 text-[#00b1d2] border border-[#00b1d2]/50 text-[9px] uppercase font-bold tracking-widest shadow-[0_0_10px_rgba(0,177,210,0.3)] animate-[pulse_3s_ease-in-out_infinite]">
                             Achieved
                           </span>
                         )}
                       </div>
 
                       <div className="text-right">
-                        <p className={`font-semibold text-sm ${isCompleted ? 'text-accent drop-shadow-md' : 'text-[#5c9ce6]'}`}>
+                        <p className={`font-semibold text-sm ${isCompleted ? 'text-[#00b1d2] drop-shadow-md' : 'text-[#00b1d2]'}`}>
                           {goal.progress}%
                         </p>
                       </div>
@@ -170,12 +170,12 @@ export default async function HuangxingPage() {
                     </p>
 
                     {/* Progress Bar */}
-                    <div className={`w-full h-2.5 rounded-full overflow-hidden border transition-colors duration-500 ${isCompleted ? 'bg-[#111] border-accent/30 shadow-[0_0_15px_rgba(212,175,55,0.1)]' : 'bg-[#161616] border-[#222]'}`}>
+                    <div className={`w-full h-2.5 rounded-full overflow-hidden border transition-colors duration-500 ${isCompleted ? 'bg-[#111] border-[#00b1d2]/30 shadow-[0_0_15px_rgba(0,177,210,0.1)]' : 'bg-[#161616] border-[#222]'}`}>
                       <div
                         className={`h-full rounded-full transition-all duration-1000 relative overflow-hidden ${
                           isCompleted 
                             ? 'bg-gradient-to-r from-[#d4af37] via-[#fff4cc] to-[#d4af37] shadow-[0_0_12px_rgba(212,175,55,0.6)]' 
-                            : 'bg-gradient-to-r from-[#1e3a8a] via-[#4a90e2] to-[#d4af37] shadow-[0_0_8px_rgba(74,144,226,0.3)]'
+                            : 'bg-gradient-to-r from-[#0089a3] via-[#00b1d2] to-[#40d1ed] shadow-[0_0_8px_rgba(0,177,210,0.3)]'
                         }`}
                         style={{ width: `${goal.progress}%` }}
                       >
@@ -190,7 +190,7 @@ export default async function HuangxingPage() {
                         {goal.raised.toLocaleString()}฿
                       </span>
 
-                      <span className={isCompleted ? 'text-accent font-medium' : ''}>
+                      <span className={isCompleted ? 'text-[#00b1d2] font-medium' : ''}>
                         {goal.target.toLocaleString()}฿
                       </span>
                     </div>
@@ -204,8 +204,8 @@ export default async function HuangxingPage() {
         {/* Donation Details Section */}
         <div className="bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-lg mb-14 relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-serif font-semibold text-accent mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-lg">💰</span>
+            <h3 className="text-xl md:text-2xl font-serif font-semibold text-[#00b1d2] mb-6 flex items-center gap-3">
+              <span className="w-10 h-10 rounded-full bg-[#00b1d2]/10 flex items-center justify-center text-lg">💰</span>
               รายละเอียดการร่วมโดเนท
             </h3>
             
@@ -222,23 +222,23 @@ export default async function HuangxingPage() {
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">เลขบัญชี / Account Number</p>
-                    <p className="text-[#5c9ce6] text-2xl md:text-3xl font-bold tracking-wider">073-3-20750-7</p>
+                    <p className="text-[#00b1d2] text-2xl md:text-3xl font-bold tracking-wider">230-897912-4</p>
                   </div>
                   <div>
                     <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">Sirin S.</p>
+                    <p className="text-white font-medium text-lg">นันทนัช คันธารัตนกุล</p>
                   </div>
                 </div>
               </div>
 
               {/* Links & CTA */}
               <div className="flex flex-col justify-center space-y-6">
-                <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6">
+                <div className="bg-[#00b1d2]/5 border border-[#00b1d2]/20 rounded-2xl p-6">
                   <p className="text-[#aaa] text-sm mb-5 leading-relaxed">
                     ติดตามประกาศและรายละเอียดเพิ่มเติมได้ที่ (X):
                   </p>
                   <Link 
-                    href="https://x.com/HuangXingTH/status/2054033824905060536?s=20" 
+                    href="https://x.com/Jiangli_lele_TH/status/2054049862300418302?s=20" 
                     target="_blank"
                     className="flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 transition-all py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-xl"
                   >
@@ -256,7 +256,7 @@ export default async function HuangxingPage() {
             </div>
           </div>
           {/* Subtle background glow */}
-          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-[#00b1d2]/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
         {/*
         <div className="mb-10">

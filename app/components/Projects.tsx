@@ -91,12 +91,12 @@ export default async function Projects() {
     //   progress: Math.min(100, Math.round((jhRaised / Math.max(1, jhGoal)) * 100)),
     //   href: '/'
     // },
-    // { 
-    //   id: 6, name: 'LiPeien', image: '/images/peien.png',
-    //   raised: `${lpRaised.toLocaleString()}฿`, target: `${lpGoal.toLocaleString()}฿`, 
-    //   progress: Math.min(100, Math.round((lpRaised / Math.max(1, lpGoal)) * 100)),
-    //   href: '/'
-    // },
+    { 
+      id: 6, name: 'LiPeien', image: '/images/peien.png',
+      raised: `${lpRaised.toLocaleString()}฿`, target: `${lpGoal.toLocaleString()}฿`, 
+      progress: Math.min(100, Math.round((lpRaised / Math.max(1, lpGoal)) * 100)),
+      href: '/lipeien'
+    },
   ];
 
   return (
