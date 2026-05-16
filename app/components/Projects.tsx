@@ -73,12 +73,6 @@ export default async function Projects() {
       progress: Math.min(100, Math.round((qiuRaised / Math.max(1, qiuGoal)) * 100)),
       href: '/qiudingjie'
     },
-    // { 
-    //   id: 3, name: 'XingQiu', image: '/images/xingqiu.png',
-    //   raised: `${xqRaised.toLocaleString()}฿`, target: `${xqGoal.toLocaleString()}฿`, 
-    //   progress: Math.min(100, Math.round((xqRaised / Math.max(1, xqGoal)) * 100)),
-    //   href: '/xingqiu'
-    // },
     { 
       id: 3, name: 'JiangHeng', image: '/images/jiang.png',
       raised: `${jhRaised.toLocaleString()}฿`, target: `${jhGoal.toLocaleString()}฿`, 
@@ -92,7 +86,13 @@ export default async function Projects() {
       href: '/lipeien'
     },
     { 
-      id: 5, name: 'JiangLi', image: '/images/jiangli.png',
+      id: 5, name: 'XingQiu', image: '/images/xingqiu.png',
+      raised: `${xqRaised.toLocaleString()}฿`, target: `${xqGoal.toLocaleString()}฿`, 
+      progress: Math.min(100, Math.round((xqRaised / Math.max(1, xqGoal)) * 100)),
+      href: '/xingqiu'
+    },
+    { 
+      id: 6, name: 'JiangLi', image: '/images/jiangli.png',
       raised: `${jlRaised.toLocaleString()}฿`, target: `${jlGoal.toLocaleString()}฿`, 
       progress: Math.min(100, Math.round((jlRaised / Math.max(1, jlGoal)) * 100)),
       href: '/jiangli'

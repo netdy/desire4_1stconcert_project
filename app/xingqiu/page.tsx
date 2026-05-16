@@ -238,7 +238,7 @@ export default async function XingQiuPage() {
                     ติดตามประกาศและรายละเอียดเพิ่มเติมได้ที่ (X):
                   </p>
                   <Link 
-                    href="https://x.com/HuangXingTH/status/2018323567864406151?s=20" 
+                    href="https://x.com/HuangXingTH/status/2055257876244078760?s=20" 
                     target="_blank"
                     className="flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 transition-all py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-xl"
                   >
