@@ -60,7 +60,17 @@ export default async function Projects() {
   const lpGoal = getCellValue(16, 30000);
   const lpRaised = getCellValue(17, 0);
 
+  // Desire4: Goal Row 20, Raised Row 21
+  const d4Goal = getCellValue(19, 30000);
+  const d4Raised = getCellValue(20, 0);
+
   const members = [
+    // { 
+    //   id: 7, name: 'Desire4', image: '/images/desire4.png',
+    //   raised: `${d4Raised.toLocaleString()}฿`, target: `${d4Goal.toLocaleString()}฿`, 
+    //   progress: Math.min(100, Math.round((d4Raised / Math.max(1, d4Goal)) * 100)),
+    //   href: '/desire4'
+    // },
     { 
       id: 1, name: 'HuangXing', image: '/images/huangxing.png',
       raised: `${hxRaised.toLocaleString()}฿`, target: `${hxGoal.toLocaleString()}฿`, 
@@ -122,7 +132,7 @@ export default async function Projects() {
               <CardWrapper 
                 key={member.id} 
                 {...(wrapperProps as any)}
-                className="bg-brand-card rounded-xl p-2.5 md:p-8 transition-all duration-300 ease-in-out border border-brand-border cursor-pointer hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-accent group flex flex-col items-center text-center"
+                className={`bg-brand-card rounded-xl p-2.5 md:p-8 transition-all duration-300 ease-in-out border border-brand-border cursor-pointer hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-accent group flex flex-col items-center text-center ${member.id === 7 ? 'col-span-2 lg:col-span-3 lg:w-[66%] mx-auto w-full' : ''}`}
               >
                 <div className="relative w-12 h-12 md:w-28 md:h-28 rounded-full overflow-hidden mb-2 md:mb-6 border-2 border-accent shrink-0 shadow-lg">
                   <Image 
