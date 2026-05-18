@@ -163,18 +163,17 @@ export default async function Projects() {
                 
                 <div className="w-full mt-auto">
                   <div className="flex justify-between items-center text-[9px] md:text-sm mb-1.5 md:mb-2 px-1">
-                    <span className="text-[#666] uppercase tracking-widest font-medium">Progress</span>
-                    <div className="flex items-center gap-1.5 md:gap-3">
-                      {member.progress >= 100 && (
-                        <div className="flex items-center gap-1 md:gap-1.5 bg-accent/10 border border-accent/30 rounded px-1.5 md:px-2 py-0.5 shadow-[0_0_8px_rgba(212,175,55,0.2)]">
-                          <svg xmlns="http://www.w3.org/2000/svg" className="h-2 w-2 md:h-3 md:w-3 text-accent" viewBox="0 0 20 20" fill="currentColor">
-                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                          </svg>
-                          <span className="text-accent font-bold text-[7px] md:text-[9px] uppercase tracking-widest drop-shadow-[0_0_5px_rgba(212,175,55,0.3)]">Closed</span>
-                        </div>
-                      )}
-                      <span className="text-accent font-bold text-sm md:text-lg">{member.progress}%</span>
-                    </div>
+                    {member.progress >= 100 ? (
+                      <div className="flex items-center gap-1 md:gap-1.5 bg-accent/10 border border-accent/30 rounded px-1.5 md:px-2 py-0.5 shadow-[0_0_8px_rgba(212,175,55,0.2)]">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-2 w-2 md:h-3 md:w-3 text-accent" viewBox="0 0 20 20" fill="currentColor">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-accent font-bold text-[7px] md:text-[9px] uppercase tracking-widest drop-shadow-[0_0_5px_rgba(212,175,55,0.3)]">Closed</span>
+                      </div>
+                    ) : (
+                      <span className="text-[#666] uppercase tracking-widest font-medium">Progress</span>
+                    )}
+                    <span className="text-accent font-bold text-sm md:text-lg">{member.progress}%</span>
                   </div>
                   <div className="w-full h-1 md:h-[6px] bg-[#2a2a2a] rounded-full overflow-hidden shadow-inner relative group-hover:bg-[#333] transition-colors">
                     <div 
