@@ -6,7 +6,7 @@ export default function Footer() {
           <h2 className="font-serif text-3xl max-md:text-2xl font-semibold mb-2.5">Thank you for being part of this journey</h2>
           <p className="text-sm text-[#888] italic mb-10">
             &quot;เว็บไซต์นี้จัดทำขึ้นเพื่อโปรเจคของ <br/>
-HUANGXING THAILAND, QIUDINGJIE HOME TH, OCEANJIANG TH และ JiangLi Lele TH <br/>
+HUANGXING THAILAND, QIUDINGJIE HOME TH, OCEANJIANG TH, JiangLi Lele TH และ I4CreamDesire4TH <br/>
 เพื่อร่วมกันส่งต่อความรัก การสนับสนุน และความทรงจำอันพิเศษให้กับ DESIRE4 ในคอนเสิร์ตครั้งแรกที่กรุงเทพฯ <br/>
 ขอบคุณแฟน ๆ ทุกคนที่ร่วมเป็นส่วนหนึ่งของโปรเจกต์นี้ไปด้วยกันค่ะ&quot;
           </p>
