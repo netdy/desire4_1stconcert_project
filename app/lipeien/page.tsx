@@ -201,44 +201,16 @@ export default async function LiPeienPage() {
           </div>
         </div>
 
-        {/* Donation Details Section */}
-        <div className="bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-lg mb-14 relative overflow-hidden">
+       <div className="bg-brand-card border border-brand-border rounded-3xl p-7 md:p-9 shadow-lg mb-14 relative overflow-hidden">
           <div className="relative z-10">
-            <h3 className="text-xl md:text-2xl font-serif font-semibold text-accent mb-6 flex items-center gap-3">
-              <span className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center text-lg">💰</span>
-              รายละเอียดการร่วมโดเนท
-            </h3>
-            
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Bank Account Info */}
-              <div className="space-y-4">
-                <p className="text-[#aaa] text-sm md:text-base leading-relaxed">
-                  สามารถร่วมสนับสนุนโปรเจกต์ได้ที่บัญชีด้านล่างนี้:
-                </p>
-                <div className="bg-[#111] border border-[#2a2a2a] rounded-2xl p-6 space-y-4 shadow-inner">
-                  <div>
-                    <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ธนาคาร / Bank</p>
-                    <p className="text-white font-medium">กสิกรไทย (Kasikorn Bank)</p>
-                  </div>
-                  <div>
-                    <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">เลขบัญชี / Account Number</p>
-                    <p className="text-[#00b1d2] text-2xl md:text-3xl font-bold tracking-wider">230-897912-4</p>
-                  </div>
-                  <div>
-                    <p className="text-[#666] text-[10px] uppercase tracking-widest mb-1 font-bold">ชื่อบัญชี / Account Name</p>
-                    <p className="text-white font-medium text-lg">นันทนัช คันธารัตนกุล</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Links & CTA */}
               <div className="flex flex-col justify-center space-y-6">
                 <div className="bg-accent/5 border border-accent/20 rounded-2xl p-6">
                   <p className="text-[#aaa] text-sm mb-5 leading-relaxed">
                     ติดตามประกาศและรายละเอียดเพิ่มเติมได้ที่ (X):
                   </p>
                   <Link 
-                    href="https://x.com/Jiangli_lele_TH/status/2054049862300418302?s=20" 
+                    href="https://x.com/Jiangli_lele_TH/status/2056291076584132947?s=20" 
                     target="_blank"
                     className="flex items-center justify-center gap-3 bg-white text-black hover:bg-gray-200 transition-all py-4 rounded-xl font-bold text-sm uppercase tracking-widest shadow-xl"
                   >
@@ -246,25 +218,11 @@ export default async function LiPeienPage() {
                     ดูบน X
                   </Link>
                 </div>
-                
-                <div className="bg-[#111] p-4 rounded-xl border border-dashed border-[#333]">
-                  <p className="text-[#666] text-xs leading-relaxed">
-                    *หากโอนแล้วอย่าลืมกรอกฟอร์มกันนะคะ
-                  </p>
-                </div>
               </div>
             </div>
           </div>
-          {/* Subtle background glow */}
           <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
         </div>
-        {/*
-        <div className="mb-10">
-          <h3 className="text-accent text-sm uppercase tracking-[3px] font-semibold mb-4 text-center">
-            ตรวจสอบรายชื่อผู้โดเนท
-          </h3>
-          <DonorList donors={donors} />
-        </div> */}
       </div>
     </main>
   );

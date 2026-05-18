@@ -65,12 +65,6 @@ export default async function Projects() {
   const d4Raised = getCellValue(20, 0);
 
   const members = [
-    // { 
-    //   id: 7, name: 'Desire4', image: '/images/desire4.png',
-    //   raised: `${d4Raised.toLocaleString()}฿`, target: `${d4Goal.toLocaleString()}฿`, 
-    //   progress: Math.min(100, Math.round((d4Raised / Math.max(1, d4Goal)) * 100)),
-    //   href: '/desire4'
-    // },
     { 
       id: 1, name: 'HuangXing', image: '/images/huangxing.png',
       raised: `${hxRaised.toLocaleString()}฿`, target: `${hxGoal.toLocaleString()}฿`, 
@@ -107,6 +101,12 @@ export default async function Projects() {
       progress: Math.min(100, Math.round((jlRaised / Math.max(1, jlGoal)) * 100)),
       href: '/jiangli'
     },
+     { 
+      id: 7, name: 'Desire4', image: '/images/desire.png',
+      raised: `${d4Raised.toLocaleString()}฿`, target: `${d4Goal.toLocaleString()}฿`, 
+      progress: Math.min(100, Math.round((d4Raised / Math.max(1, d4Goal)) * 100)),
+      href: '/desire4'
+    },
   ];
 
   return (
@@ -132,8 +132,16 @@ export default async function Projects() {
               <CardWrapper 
                 key={member.id} 
                 {...(wrapperProps as any)}
-                className={`bg-brand-card rounded-xl p-2.5 md:p-8 transition-all duration-300 ease-in-out border border-brand-border cursor-pointer hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-accent group flex flex-col items-center text-center ${member.id === 7 ? 'col-span-2 lg:col-span-3 lg:w-[66%] mx-auto w-full' : ''}`}
+                className={`bg-brand-card rounded-xl p-2.5 md:p-8 transition-all duration-300 ease-in-out border border-brand-border cursor-pointer hover:-translate-y-1.5 hover:shadow-[0_10px_40px_rgba(0,0,0,0.6)] hover:border-accent group flex flex-col items-center text-center relative ${member.id === 7 ? 'col-span-2 lg:col-span-3 lg:w-[66%] mx-auto w-full' : ''}`}
               >
+                {member.progress >= 100 && (
+                  <div className="absolute top-2 right-2 md:top-4 md:right-4 bg-gradient-to-r from-accent to-[#e6c15c] text-black px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[7px] md:text-[10px] font-bold shadow-[0_0_10px_rgba(212,175,55,0.6)] z-10 uppercase tracking-wider flex items-center gap-0.5 md:gap-1 border border-white/40">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-2 w-2 md:h-3 md:w-3" viewBox="0 0 20 20" fill="currentColor">
+                      <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                    </svg>
+                    Completed
+                  </div>
+                )}
                 <div className="relative w-12 h-12 md:w-28 md:h-28 rounded-full overflow-hidden mb-2 md:mb-6 border-2 border-accent shrink-0 shadow-lg">
                   <Image 
                     src={member.image} 
@@ -154,15 +162,29 @@ export default async function Projects() {
                 </div>
                 
                 <div className="w-full mt-auto">
-                  <div className="flex justify-between items-center text-[9px] md:text-sm mb-1 md:mb-2 px-1">
+                  <div className="flex justify-between items-center text-[9px] md:text-sm mb-1.5 md:mb-2 px-1">
                     <span className="text-[#666] uppercase tracking-widest font-medium">Progress</span>
-                    <span className="text-accent font-bold text-sm md:text-lg">{member.progress}%</span>
+                    <div className="flex items-center gap-1.5 md:gap-3">
+                      {member.progress >= 100 && (
+                        <div className="flex items-center gap-1 md:gap-1.5 bg-accent/10 border border-accent/30 rounded px-1.5 md:px-2 py-0.5 shadow-[0_0_8px_rgba(212,175,55,0.2)]">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-2 w-2 md:h-3 md:w-3 text-accent" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                          </svg>
+                          <span className="text-accent font-bold text-[7px] md:text-[9px] uppercase tracking-widest drop-shadow-[0_0_5px_rgba(212,175,55,0.3)]">Closed</span>
+                        </div>
+                      )}
+                      <span className="text-accent font-bold text-sm md:text-lg">{member.progress}%</span>
+                    </div>
                   </div>
-                  <div className="w-full h-1 md:h-[6px] bg-[#2a2a2a] rounded-full overflow-hidden shadow-inner">
+                  <div className="w-full h-1 md:h-[6px] bg-[#2a2a2a] rounded-full overflow-hidden shadow-inner relative group-hover:bg-[#333] transition-colors">
                     <div 
-                      className="h-full bg-accent rounded-full transition-all duration-1000 ease-in-out shadow-[0_0_10px_rgba(212,175,55,0.6)]" 
+                      className={`h-full rounded-full transition-all duration-1000 ease-in-out shadow-[0_0_10px_rgba(212,175,55,0.6)] ${member.progress >= 100 ? 'bg-gradient-to-r from-accent via-[#ffecaa] to-accent' : 'bg-accent'}`}
                       style={{ width: `${member.progress}%` }}
-                    ></div>
+                    >
+                      {member.progress >= 100 && (
+                        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 to-transparent -translate-x-[100%] group-hover:translate-x-[100%] transition-transform duration-1500 ease-in-out"></div>
+                      )}
+                    </div>
                   </div>
                 </div>
               </CardWrapper>
